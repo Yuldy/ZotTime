@@ -2,3 +2,12 @@
     width: 200px;
     height: 20px;
 }
+
+html, body {
+    background-color: aliceblue;
+    color: darkgrey;
+}
+html, button {
+    background-color: cornsilk;
+    color: darkgray ;
+}

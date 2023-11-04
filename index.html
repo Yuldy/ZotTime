@@ -9,33 +9,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="dropdownList">
-        <form action="">
-            <div class="col-1">
-                <label for="term">Choose your Department:</label>
-                <select name="term" id="term">
-                    <option value="winter24">Winter 2023/2024</option>
+    <header>
+        <h1>ZotTime</h1>
+        <p>Figure out how long it takes to get in between your classes!</p>
+    </header>
 
-                </select>
+    <section class="wrapper1">
+        <div class="dropdownList">
+            <form action="">
+                <div class="col-1">
+                    <!-- <label for="department">Choose your Department:</label> -->
+                    <label for="departmentDepart">Choose your Department:</label>
+                    <select name="department" id="departmentDepart" class="departmentDepart">
+                        <option value="" disabled selected>--Choose a Department--</option>
 
-                <label for="department">Choose your Department:</label>
-                <select name="department" id="department">
-                    <option value="" disabled selected>--Choose a Department--</option>
-                    
-                </select>
-            </div>
+                    </select>
 
-            <div class="col-2">
-                <label for="courseCode">Course Code</label>
-                <input type="text" id="courseCode" placeholder="courseCode">
+                    <label for="departmentArrival">Choose your Department:</label>
+                    <select name="department" id="departmentArrival" class="departmentArrival">
+                        <option value="" disabled selected>--Choose a Department--</option>
 
-                <label for="courseNumber">Course Number</label>
-                <input type="text" id="courseNumber" placeholder="courseNumber">
-            </div>
+                    </select>
+                </div>
+
+                <div class="col-2">
+                    <label for="courseNumberDepart">Course Number</label>
+                    <select name="courseNumber" id="courseNumberDepart" class="courseNumberDepart">
+                        <option value="" disabled selected>--Course Number--</option>
+
+                    </select>
+
+                    <label for="courseNumberArrival">Course Number</label>
+                    <select name="courseNumber" id="courseNumberArrival" class="courseNumberArrival">
+                        <option value="" disabled selected>--Course Number--</option>
+
+                    </select>
+                </div>
 
 
-            <button>Submit</button>
-        </form>
+                <button>Submit</button>
+            </form>
+
+        </div>
 
     </section>
 

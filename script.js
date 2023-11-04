@@ -13,7 +13,7 @@ const UCIBuildings = {
     
     // ARTS
     HH: 'Humanities Hall',
-    ACT: 'Art Culcture & Technolog',
+    ACT: 'Art Culture & Technolog',
     ART: 'Art Studio',
     ARAN: 'Arts Annex',
     AITR: 'Arts Institution',
