@@ -9,9 +9,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="">
-        <input type="text" class="courses">
-        <input type="text" class="courses">
-        <button></button>
-    </form>
+    <section class="dropdownList">
+        <form action="">
+            <div class="col-1">
+                <label for="term">Choose your Department:</label>
+                <select name="term" id="term">
+                    <option value="winter24">Winter 2023/2024</option>
+
+                </select>
+
+                <label for="department">Choose your Department:</label>
+                <select name="department" id="department">
+                    <option value="" disabled selected>--Choose a Department--</option>
+                    
+                </select>
+            </div>
+
+            <div class="col-2">
+                <label for="courseCode">Course Code</label>
+                <input type="text" id="courseCode" placeholder="courseCode">
+
+                <label for="courseNumber">Course Number</label>
+                <input type="text" id="courseNumber" placeholder="courseNumber">
+            </div>
+
+
+            <button>Submit</button>
+        </form>
+
+    </section>
+
+    <script src="requests.js"></script>
 </body>
