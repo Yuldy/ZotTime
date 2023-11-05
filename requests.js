@@ -1,3 +1,5 @@
+
+
 //Fetch Courses from PeterPortal API
 
 let departmentDropDownDepart = document.querySelector('.departmentDepart')
@@ -76,36 +78,30 @@ departmentDropDownArrival.addEventListener('input', (e) => {
         })
 })
 
+// Fetch building values from departments
 
-// FETCH based on Course Code:
-fetch("https://api.peterportal.org/rest/v0/schedule/soc?term=2023Fall&sectionCodes=35660", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+const form = document.querySelector('#formSubmit');
 
-    //FETCH based on Course Code
-    
-//fetch(`https://api.peterportal.org/rest/v0/courses/all`)
-
-//Jessica api key for now
-
-/*
-API_KEY = "AIzaSyAu0kb-_ajrx0Hh1T3iUUBSNK9DtJhPIn0"
-//fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?destinations=New%20York%20City%2C%20NY&origins=Washington%2C%20DC&units=imperial&key=API_KEY)`)
-//fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?destinations=$(building1)origins=$(building2)&units=imperial&key=API_KEY)`)
-fetch(`https://routes.googleapis.com`) 
-    .then(res => res.json())
-    .then(data => {
-        
-    }
-    )
-
-*/
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    let departDepartment = departmentDropDownDepart.value;
+    let departCourseNumber = courseNumberDropDownDepart.value;
+    fetch (`https://api.peterportal.org/rest/v0/schedule/soc?term=2024%20Winter&department=${departDepartment}&courseNumber=${departCourseNumber}`)
+        .then (res=> res.json())
+        .then (data=> {
+            console.log(data.schools[0].departments[0].courses[0].sections[0].meetings[0].bldg);
+        })
+    let arrivalDepartment = departmentDropDownArrival.value;
+    let arrivalCourseNumber = courseNumberDropDownArrival.value;
+    fetch (`https://api.peterportal.org/rest/v0/schedule/soc?term=2024%20Winter&department=${arrivalDepartment}&courseNumber=${arrivalCourseNumber}`)
+        .then (res=> res.json())
+        .then (data=> {
+            console.log(data.schools[0].departments[0].courses[0].sections[0].meetings[0].bldg);
+    })
+})
 
 
-
-
-// [FETCH = based on Courss Code]
+// [FETCH = based on Course Code]
 // this is just hard coded for time being.
 let courseCode = 35660;
 //let courseCode = int(prompt());
@@ -129,3 +125,24 @@ fetch(`https://api.peterportal.org/rest/v0/schedule/soc?term=${quarterTerm}&sect
         const grabSpecificBuilding = retrievedData.schools[0].departments[0].courses[0].sections[0].meetings[0].bldg;
         console.log("Building: " + grabSpecificBuilding);
     })
+
+
+//
+// int deptCode = 0;
+// int courseNunber = 0;
+
+
+// Requesting Geocode
+
+// Hardcode
+// string = '';
+
+
+// fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=Anteater%20Learning%20Pavilion%20Irvine%20CA&key=AIzaSyDr0z0C-1w5yxssvIn9_1gJHPmAnY_fMmI`);
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response error.');
+//         }
+
+//         return response.json();
+//     })

@@ -1,13 +1,80 @@
-.courses {
-    width: 200px;
-    height: 20px;
+html,
+body {
+    font-family: 'AR One Sans', sans-serif;
+    font-family: 'Gabarito', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-html, body {
-    background-color: aliceblue;
-    color: darkgrey;
+html {
+    background: rgb(255,210,0);
+    background: linear-gradient(90deg, rgba(255,210,0,1) 0%, rgba(0,100,164,1) 100%);
 }
-html, button {
-    background-color: cornsilk;
-    color: darkgray ;
+
+body {
+    background-color: white;
 }
+
+header{
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 4.5em;
+}
+
+header h1 {
+    font-size: 3.5em;
+    color: rgb(0, 100, 164);
+    margin: 0px 0px;
+}
+
+header h1 span {
+    color: rgb(255, 210, 0);
+}
+
+.wrapper1{
+    padding-bottom: 50px;
+}
+
+.wrapper1 label{
+    font-style: italic;
+}
+
+.wrapper1 .dropdownList {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdownList button {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #6874E8;
+    border: 0px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1em;
+}
+
+.dropdownList button:hover {
+    transition: 0.2s;
+    background-color: #828ffb;
+    cursor: pointer;
+}
+
+/* classlistAdd */
+
+.imgSize {
+    width: 200px;
+    position: relative;
+}
+
+.col-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+#map {
+    height: 400px;
+    width: 100%
+}
+

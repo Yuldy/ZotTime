@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ok</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <script src="./script.js/"></script>
+    <title>ZotTime</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=AR+One+Sans&family=Gabarito:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>ZotTime</h1>
-        <p>Figure out how long it takes to get in between your classes!</p>
-    </header>
 
+<body>
     <section class="wrapper1">
         <div class="dropdownList">
-            <form action="">
-                <div class="col-1">
+            <form action="" id="formSubmit" class="formSubmit">
+                <div class="row">
                     <!-- <label for="department">Choose your Department:</label> -->
-                    <label for="departmentDepart">Choose your Department:</label>
-                    <select name="department" id="departmentDepart" class="departmentDepart">
-                        <option value="" disabled selected>--Choose a Department--</option>
+                    <div class="row">
+                        <h2>Departure</h2>
+                        <label for="departmentDepart">Choose your Department (e.g ICS)</label>
+                        <select name="department" id="departmentDepart" class="departmentDepart">
+                            <option value="" disabled selected>--Choose a Department--</option>
 
-                    </select>
+                        </select>
+                        <label for="courseNumberDepart">Course Number (e.g 31)</label>
+                        <select name="courseNumber" id="courseNumberDepart" class="courseNumberDepart">
+                            <option value="" disabled selected>--Course Number--</option>
 
-                    <label for="departmentArrival">Choose your Department:</label>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h2>Arrival</h2>
+                    <label for="departmentArrival">Choose your Department (e.g ICS)</label>
                     <select name="department" id="departmentArrival" class="departmentArrival">
                         <option value="" disabled selected>--Choose a Department--</option>
 
                     </select>
-                </div>
 
-                <div class="col-2">
-                    <label for="courseNumberDepart">Course Number</label>
-                    <select name="courseNumber" id="courseNumberDepart" class="courseNumberDepart">
-                        <option value="" disabled selected>--Course Number--</option>
-
-                    </select>
-
-                    <label for="courseNumberArrival">Course Number</label>
+                    <label for="courseNumberArrival">Course Number (e.g 31)</label>
                     <select name="courseNumber" id="courseNumberArrival" class="courseNumberArrival">
                         <option value="" disabled selected>--Course Number--</option>
 
@@ -47,12 +52,25 @@
                 </div>
 
 
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </form>
 
         </div>
 
     </section>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <section class = "wrapper2">
+        <div id="map"></div>
+        <script>
+            (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+              key: "AIzaSyDr0z0C-1w5yxssvIn9_1gJHPmAnY_fMmI",
+              v: "weekly",
+              // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+              // Add other bootstrap parameters as needed, using camel case.
+            });
+          </script>
+    </section>    
 
     <script src="requests.js"></script>
 </body>
