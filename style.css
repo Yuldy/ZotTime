@@ -6,15 +6,15 @@ body {
 }
 
 html {
-    background: rgb(255,210,0);
-    background: linear-gradient(90deg, rgba(255,210,0,1) 0%, rgba(0,100,164,1) 100%);
+    background: rgb(255, 210, 0);
+    background: linear-gradient(90deg, rgba(255, 210, 0, 1) 0%, rgba(0, 100, 164, 1) 100%);
 }
 
 body {
     background-color: white;
 }
 
-header{
+header {
     display: flex;
     justify-content: center;
     padding-top: 2em;
@@ -31,17 +31,26 @@ header h1 span {
     color: rgb(255, 210, 0);
 }
 
-.wrapper1{
+header p {
+    color: rgb(0, 100, 164);
+    font-weight: 600;
+}
+
+.wrapper1 {
     padding-bottom: 50px;
 }
 
-.wrapper1 label{
+.wrapper1 label {
     font-style: italic;
 }
 
 .wrapper1 .dropdownList {
     display: flex;
     justify-content: center;
+}
+
+.wrapper1 .dropdownList h2 {
+    color: rgb(0, 100, 164);
 }
 
 .dropdownList button {
@@ -63,8 +72,9 @@ header h1 span {
 
 /* classlistAdd */
 
-.imgSize {
-    width: 200px;
+#anteaterLogo {
+    width: 150px;
+    height: 150px;
     position: relative;
 }
 
@@ -73,8 +83,18 @@ header h1 span {
     flex-direction: column;
 }
 
-#map {
-    height: 400px;
-    width: 100%
+@media (max-width: 840px) {
+    .wrapper1, header {
+        padding: 2em 5em 3em 5em;
+    }
 }
 
+@media (max-width: 640px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    body {
+        margin: 1.5em 1em 1.5em 1em;
+    }
+}

@@ -121,21 +121,6 @@ fetch(`https://api.peterportal.org/rest/v0/courses/all`)
         SSTR: 'Social Science Trailer',
     }
 
+module.exports = UCIBuildings;
 
-let irvineSuffix = "Irvine CA"
-    //D ELEET LATER
-let fullBuilding = 'SSL 1200' 
 
-const buildingContents = fullBuilding.split(" ");
-
-// SSL
-let specifiedBuilding = buildingContents[0];
-
-let buildingDestination;
-if (specifiedBuilding in UCIBuildings) {
-    buildingDestination = UCIBuildings[specifiedBuilding] + " "+ irvineSuffix;
-    buildingDestination = buildingDestination.replace(/ /g, "%20");
-
-    console.log(buildingDestination);
-    //return buildingDestination;
-}
